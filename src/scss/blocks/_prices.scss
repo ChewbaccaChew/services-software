@@ -1,0 +1,189 @@
+.prices {
+  padding-bottom: 40px;
+  @media (min-width: 768px) {
+    padding-bottom: 47px;
+  }
+  @media (min-width: 1120px) {
+    padding-bottom: 50px;
+  }
+
+  &__title {
+    @include block-title;
+    @media (min-width: 768px) {
+      padding-left: 24px;
+    }
+    @media (min-width: 1120px) {
+      padding-left: 32px;
+    }
+  }
+
+  &__wrapper {
+    padding-left: 8px;
+    padding-top: 16px;
+    padding-bottom: 10px;
+    @media (min-width: 768px) {
+      padding: 24px;
+      padding-top: 32px;
+    }
+    @media (min-width: 1120px) {
+      padding: 32px;
+    }
+  }
+
+  &__list {
+    @media (min-width: 768px) {
+      display: table;
+    }
+  }
+
+  &__titles {
+    display: none;
+    &.prices__item {
+      @media (min-width: 768px) {
+        background-color: $background-grey;
+      }
+    }
+  }
+
+  &__titles-item {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: $gray-text;
+    opacity: 0.72;
+  }
+
+  &__hidden-text {
+    width: 120px;
+    color: transparent;
+  }
+
+  &__item {
+    position: relative;
+    box-sizing: border-box;
+    width: 260px;
+    height: 200px;
+    padding: 16px;
+    border-radius: 6px;
+    background-color: $white;
+    @media (min-width: 768px) {
+      display: table-row;
+      height: 64px;
+      border-radius: 0;
+      padding: 0;
+    }
+    &:first-child {
+      height: 48px;
+    }
+    &::before {
+      @media (min-width: 768px) {
+        content: "";
+        position: absolute;
+        left: 16px;
+        bottom: 0;
+        width: calc(100% - 32px);
+        border-top: 1px solid $item-border-grey;
+      }
+    }
+    &:first-child::before,
+    &:last-child::before {
+      border: none;
+    }
+  }
+
+  &__cell {
+    & + & {
+    margin-top: 16px;
+    }
+    @media (min-width: 768px) {
+      display: table-cell;
+      width: auto;
+      vertical-align: middle;
+      padding-right: 16px;
+    }
+    &:first-child {
+      @media (min-width: 768px) {
+        padding-left: 16px;
+      }
+      @media (min-width: 1120px) {
+        padding-left: 24px;
+      }
+    }
+  }
+
+  &__cell-title {
+    margin: 0;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: $gray-text;
+    opacity: 0.72;
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__cell-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+  }
+
+  &__btn {
+    width: 119px;
+    height: 32px;
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    @include button-states;
+    @media (min-width: 1120px) {
+      right: 24px;
+    }
+  }
+
+  &__application {
+    margin: 0 16px;
+    position: relative;
+    @media (min-width: 768px) {
+      margin: 0 24px;
+    }
+    @media (min-width: 1120px) {
+      margin: 0 32px;
+    }
+  }
+
+  &__application-text {
+    margin: 0;
+    margin-bottom: 24px;
+    font-family: "TT Lakes-Regular";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    @media (min-width: 620px) {
+      width: 421px;
+    }
+  }
+
+  &__application-link {
+    font-family: "TT Lakes-Medium";
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    transition: all 0.5s ease;
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &::after {
+      content: url("../assets/img/arrows/right.svg");
+      position: absolute;
+      bottom: 21.5px;
+      height: 1px;
+    }
+  }
+}

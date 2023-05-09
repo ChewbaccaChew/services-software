@@ -1,0 +1,9 @@
+.modal-background-blur {
+  @include background-blur;
+}
+
+.burger-background-blur {
+  @include background-blur;
+}
+
+@include animation-blur;

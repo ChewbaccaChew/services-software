@@ -1,0 +1,103 @@
+.modal {
+  // position: absolute;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  transform: translateX(700px);
+  transition: all .5s;
+  height: 100%;
+  min-width: 320px;
+  max-width: 320px;
+  &-call--open,
+  &-chat--open {
+    transform: translateX(0);
+  }
+  @media (min-width: 1120px) {
+    min-width: 440px;
+    max-width: 440px;
+  }
+
+  &__container {
+    min-height: 100vh;
+    padding: 24px 16px 0;
+    background-color: $white;
+    box-shadow: -16px 0px 52px 0px rgba(14, 24, 80, 0.2),
+      2px 0px 4px 0px rgba(14, 24, 80, 0.2);
+    @media (min-width: 1120px) {
+      padding: 32px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__btn-cross {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 40px;
+    @include button-states;
+    @media (min-width: 1120px) {
+      position: absolute;
+      left: -73px;
+      top: 24px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin: 0;
+    margin-bottom: 24px;
+    &::before {
+      content: url("../assets/img/decor/highlight.svg");
+      position: absolute;
+      top: -8px;
+      left: -16px;
+      @media (min-width: 1120px) {
+        left: -32px;
+      }
+    }
+  }
+
+  &__form {
+    margin-bottom: 16px;
+    padding-top: 1px;
+  }
+
+  &__form-item {
+    & + & {
+      margin-top: 16px;
+    }
+    width: 288px;
+    height: 48px;
+    @media (min-width: 1120px) {
+      width: 376px;
+    }
+  }
+
+  &__form-textarea {
+    height: 118px;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 19px;
+    font-family: "TT Lakes-Medium";
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    @media (min-width: 1120px) {
+      margin-bottom: 23px;
+    }
+  }
+
+  &__link {
+    color: $pink;
+  }
+
+  &__btn-send {
+    width: 136px;
+    height: 32px;
+    display: block;
+    margin-left: auto;
+    @include button-states;
+  }
+}

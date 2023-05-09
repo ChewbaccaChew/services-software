@@ -1,0 +1,133 @@
+.types {
+  padding-bottom: 18px;
+  @media (min-width: 768px) {
+    padding-bottom: 26px;
+  }
+  @media (min-width: 1120px) {
+    padding-bottom: 44px;
+  }
+
+  &__title {
+    @include block-title;
+    @media (min-width: 768px) {
+      padding-left: 24px;
+    }
+    @media (min-width: 1120px) {
+      padding-left: 32px;
+    }
+  }
+
+  &__wrapper {
+    padding-top: 16px;
+    padding-left: 16px;
+    @media (min-width: 768px) {
+      padding: 24px;
+      height: 208px;
+    }
+    @media (min-width: 1120px) {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    &--all-list {
+      @media (min-width: 768px) {
+        height: auto;
+      }
+    }
+  }
+
+  &__list {
+    @media (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+      overflow: hidden;
+    }
+    @media (min-width: 1120px) {
+      gap: 16px 32px;
+    }
+  }
+
+  &__item {
+    width: 240px;
+    height: 160px;
+    @media (min-width: 768px) {
+      width: 224px;
+    }
+    @media (min-width: 1120px) {
+      width: 240px;
+    }
+  }
+
+  &__btn {
+    @include slider-btn;
+    height: 158px;
+    &:hover .types__text,
+    &:hover .types__img-go {
+      transform: scale(1.1);
+    }
+    &:active .types__text,
+    &:active .types__img-go {
+      filter: brightness(0.5);
+    }
+    &:focus .types__text,
+    &:focus .types__img-go {
+      transform: scale(1.1);
+    }
+    @media (min-width: 768px) {
+      width: 222px;
+    }
+    @media (min-width: 1120px) {
+      width: 238px;
+    }
+  }
+
+  &__text {
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-bottom: auto;
+    transition: all 0.5s ease;
+  }
+
+  &__img-go {
+    margin-right: 16px;
+    margin-bottom: 16px;
+    margin-top: auto;
+    transition: all 0.5s ease;
+  }
+
+  &__show {
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
+    &--open {
+      @media (min-width: 1120px) {
+        padding-bottom: 14px;
+      }
+    }
+  }
+
+  &__show-btn {
+    position: relative;
+    margin-left: 57px;
+    @include button-states;
+    @media (min-width: 1120px) {
+      margin-left: 63px;
+    }
+    &::before {
+      content: url("../assets/img/arrows/down.svg");
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: -33px;
+    }
+    &--open {
+      @media (min-width: 1120px) {
+        margin-top: 22px;
+      }
+      &::before {
+        content: url("../assets/img/arrows/up.svg");
+      }
+    }
+  }
+}

@@ -1,0 +1,227 @@
+.outer-container {
+  @media (min-width: 1120px) {
+    display: flex;
+  }
+}
+
+.burger-menu {
+  position: absolute;
+  // position: fixed;
+  top: 0;
+  z-index: 10;
+  transform: translateX(-400px);
+  transition: all 0.5s;
+  height: 100%;
+  min-width: 320px;
+  max-width: 320px;
+  &--open {
+    transform: translateX(0);
+  }
+  @media (min-width: 360px) {
+    min-width: 360px;
+    max-width: 360px;
+  }
+  @media (min-width: 768px) {
+    min-width: 320px;
+    max-width: 320px;
+  }
+  @media (min-width: 1120px) {
+    min-width: 306px;
+    max-width: 306px;
+    transform: translateX(0);
+    position: sticky;
+  }
+
+  &__container {
+    min-height: 100vh;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2),
+      -2px 0px 4px 0px rgba(14, 24, 80, 0.2);
+    @media (min-width: 360px) {
+      padding: 0 24px;
+    }
+    @media (min-width: 1120px) {
+      padding-left: 24px;
+      padding-right: 29px;
+      box-shadow: none;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding-top: 18.73px;
+    padding-bottom: 22.27px;
+    @media (min-width: 360px) {
+      padding-top: 16.78px;
+      padding-bottom: 20.78px;
+    }
+    @media (min-width: 768px) {
+      padding-top: 18.73px;
+      padding-bottom: 46.46px;
+    }
+    @media (min-width: 1120px) {
+      padding-top: 30px;
+      padding-bottom: 37.19px;
+    }
+  }
+
+  &__burger-btn,
+  &__search-btn {
+    width: 40px;
+    height: 40px;
+    @include button-states;
+  }
+
+  &__burger-btn {
+    margin-right: 16.73px;
+    @media (min-width: 1120px) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    margin-right: auto;
+    width: 98px;
+    height: 52px;
+  }
+
+  &__main {
+    flex: 1 1 auto;
+  }
+
+  &__navigation-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__navigation-item {
+    margin-bottom: 24px;
+    @media (min-width: 768px) {
+      margin-bottom: 32px;
+    }
+    @media (min-width: 1120px) {
+      margin-bottom: 28.31px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__navigation-link {
+    font-family: "TT Lakes-Medium";
+    font-size: 16px;
+    font-weight: 24px;
+    transition: color 0.2s ease;
+    &:hover {
+      color: $green;
+    }
+  }
+
+  &__navigation-link--active {
+    color: $gray-text;
+    position: relative;
+    &:hover {
+      color: $gray-text;
+    }
+    &::before {
+      content: url("../assets/img/decor/highlight-menu.svg");
+      position: absolute;
+      width: 4px;
+      height: 32px;
+      left: -24px;
+      top: -5px;
+    }
+  }
+
+  &__footer {
+    padding-top: 32px;
+  }
+
+  &__footer-list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 16px;
+    list-style: none;
+  }
+
+  &__footer-item {
+    margin-right: 16px;
+    width: 40px;
+    height: 40px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__footer-btn {
+    width: 40px;
+    height: 40px;
+    @include button-states;
+  }
+
+  &__contacts > a {
+    display: block;
+  }
+
+  &__contacts-mail {
+    margin-bottom: 12px;
+    font-family: "TT Lakes-Medium";
+    font-size: 16px;
+    line-height: 24px;
+    transition: color 0.2s ease;
+    &:hover {
+      color: $green;
+    }
+  }
+
+  &__contacts-phone {
+    margin-bottom: 8px;
+    font-family: "TT Lakes-Bold";
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.6px;
+    transition: color 0.2s ease;
+    @media (min-height: 768px) {
+      margin-bottom: 40px;
+    }
+    &:hover {
+      color: $green;
+    }
+  }
+
+  &__switch-langs {
+    padding-bottom: 32px;
+  }
+
+  &__label {
+    font-family: "TT Lakes-Medium";
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 7px;
+    transition: text-shadow 0.2s ease;
+    cursor: pointer;
+    &:hover {
+      text-shadow: 0 0 0.5px;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__label--active {
+    color: $gray-text;
+    &:hover {
+      text-shadow: none;
+    }
+  }
+
+  &__radio {
+    display: none;
+  }
+}

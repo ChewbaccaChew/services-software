@@ -1,0 +1,60 @@
+@mixin block-title {
+  margin: 0;
+  padding: 16px;
+  padding-top: 15px;
+  border-top: 1px solid $section-border-green;
+  font-family: "TT Lakes-Regular";
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: $gray-text;
+  background-color: $white;
+}
+
+@mixin slider-btn {
+  width: 238px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  background-color: $white;
+}
+
+@mixin background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+  z-index: 9;
+  opacity: 0;
+  display: none;
+  transform: all 600ms ease;
+
+  &--open {
+    display: block;
+    animation: modal-background-open 600ms ease;
+    animation-fill-mode: both;
+  }
+}
+
+@mixin animation-blur {
+  @keyframes modal-background-open {
+    from {opacity: 0;}
+    to {opacity: 0.96;}
+  }
+}
+
+@mixin button-states {
+  transition: all 0.5s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    filter: brightness(0.5);
+  }
+  &:focus {
+    transform: scale(1.1);
+  }
+}

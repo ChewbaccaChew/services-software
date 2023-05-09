@@ -1,0 +1,114 @@
+.main {
+  padding-top: 23px;
+  border-top: 1px solid $section-border-green;
+  @media (min-width: 1120px) {
+    padding-top: 42px;
+  }
+
+  &__header {
+    @media (min-width: 1120px) {
+      display: flex;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__header-title {
+    position: relative;
+    margin: 0;
+    margin-left: 16px;
+    margin-bottom: 24px;
+    font-family: "TT Lakes-Bold";
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    @media (min-width: 768px) {
+      margin-left: 24px;
+      margin-bottom: 32px;
+    }
+    @media (min-width: 1120px) {
+      margin-left: 34px;
+      margin-bottom: 0;
+      margin-right: auto;
+    }
+
+    &::before {
+      content: url("../assets/img/decor/highlight.svg");
+      position: absolute;
+      width: 4px;
+      height: 40px;
+      left: -16px;
+      @media (min-width: 768px) {
+        left: -24px;
+      }
+      @media (min-width: 1120px) {
+        left: -34px;
+      }
+    }
+  }
+
+  &__header-repair,
+  &__header-checkstatus {
+    display: none;
+    @include button-states;
+    @media (min-width: 1120px) {
+      display: inline-block;
+      margin-right: 32px;
+    }
+  }
+
+  &__header-repair::after {
+    content: url("../assets/img/buttons/repair.svg");
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+
+  &__header-checkstatus::after {
+    content: url("../assets/img/buttons/checkstatus.svg");
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+
+  &__navigation {
+    margin-left: 16px;
+    margin-bottom: 24px;
+    @media (min-width: 768px) {
+      margin-left: 24px;
+      margin-bottom: 32px;
+    }
+    @media (min-width: 1120px) {
+      margin-right: 34px;
+      margin-left: 34px;
+      margin-bottom: 7px;
+    }
+  }
+
+  &__navigation-list {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    overflow-x: scroll;
+    @media (min-width: 1120px) {
+      overflow: visible;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__navigation-item {
+    white-space: nowrap;
+  }
+
+  &__navigation-link {
+    display: block;
+    color: $gray-text;
+    padding: 6px 16.54px;
+    &:hover {
+      color: $black-text;
+    }
+    &--active {
+      border: 2px solid $item-border-green;
+      border-radius: 6px;
+      background-color: $white;
+    }
+  }
+}
